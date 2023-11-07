@@ -15,7 +15,6 @@ import java.util.Date;
 
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @MappedSuperclass
 public class BaseModel {
 

@@ -1,18 +1,20 @@
 package com.LLD.BookMyShow.models;
 
 import com.LLD.BookMyShow.enums.SeatType;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
+import lombok.Getter;
 
 import java.util.Date;
 
+@Getter
+@Entity
 public class Seat extends BaseModel{
-    private final Integer rowNumber;
-    private final Integer columnNumber;
-    private final SeatType type;
+    private Integer rowNumber;
+    private Integer columnNumber;
 
-    public Seat(Long id, Date createdAt, Date updatedAt, Integer rowNumber, Integer columnNumber, SeatType type) {
-        super(id, createdAt, updatedAt);
-        this.rowNumber = rowNumber;
-        this.columnNumber = columnNumber;
-        this.type = type;
-    }
+    @Enumerated
+    private SeatType type;
+
 }
